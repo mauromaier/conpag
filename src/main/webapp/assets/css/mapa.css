@@ -1,0 +1,19 @@
+@CHARSET "ISO-8859-1";
+
+
+#sidebar {
+	float: left;
+}
+
+#map_canvas {
+	margin: 0;
+	padding: 0;
+	width: 80%;
+	float: right;
+}
+
+#map_full_canvas {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}

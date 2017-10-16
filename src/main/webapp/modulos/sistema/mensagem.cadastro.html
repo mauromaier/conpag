@@ -1,0 +1,64 @@
+<div class="page">
+
+	<form name="form" ng-submit="salvar()" novalidate >
+
+		<section class="tile col-sm-12" >
+			<div class="tile-header dvd dvd-btm">
+				<h1 class="custom-font"><strong>Envio de Mensagem</strong></h1>
+			</div>
+		
+			<div class="tile-body" >
+				
+				<div class="form-group col-sm-12">
+			        <label class="control-label">Data:</label> 
+			        
+					<p name="data"
+		               type="text"
+		               class="form-control" 
+		               ng-bind="mensagem.data | date:'dd/MM/yyyy - HH:mm'" >
+				</div>
+			
+				<div class="form-group col-sm-12">
+			        <label class="control-label">Destino:</label> 
+			        
+					<div custom-select="u.id as u.nome for u in destinatarios | filter: $searchTerm"
+			              ng-model="mensagem.idUserDestino" 
+			              class="form-control">
+			            	 
+						<div>
+							<strong>{{u.nome }}</strong><br/>
+							<span><strong>Login:</strong> {{ u.login }}</span><br/>
+							<span><strong>E-mail:</strong> {{ u.email }}</span><br/>
+							<hr>
+						</div>
+					</div>
+					
+				</div>
+			
+				<div class="form-group col-sm-12">
+			        <label class="control-label">Assunto:</label> 
+			        
+					<input name="assunto"
+		               	   type="text"
+			               class="form-control" 
+			               ng-model="mensagem.assunto" >
+				</div>
+			
+				<div class="form-group col-sm-12" >
+					<label class="control-label">Mensagem:</label> 
+	    			<text-angular ng-model="mensagem.texto" 
+	    						  ta-toolbar="[ ['h1','h2','h3'],
+		    						  			['bold','italics','underline','ul', 'ol'],
+		    						  			['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'indent', 'outdent'] ]" />
+				</div>
+							
+			</div>
+			
+			<div class="tile-footer text-right bg-tr-black lter dvd dvd-top col-sm-12">
+				<button type="submit" class="btn btn-success" > Enviar </button>
+			</div>
+			
+			
+		</section>
+	</form>
+</div>

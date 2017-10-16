@@ -1,0 +1,60 @@
+<div id="sidebar-wrap" ng-controller="NavbarController">
+	
+	<uib-accordion close-others="oneAtTime" 
+				   slimscroll="{height: '100%'}">
+
+	<uib-accordion-group is-open="status.isFirstOpen" style="display: block;"> 
+	
+		<ul id="navigation" nav-collapse>
+			
+			<!-- FUNCIONALIDADES -->
+			<li>
+				<a> 
+				
+					<span> ConPag </span>
+				</a>
+				<ul style="display: block;">
+					<li>
+						<a>
+							<span> Fonecedores </span>
+						</a>
+						
+						<ul>
+							<li>
+								<a href="#!/conpag/fornecedor/new">
+									<fa name="caret-right"></fa> Cadastrar Fornecedor
+								</a>
+							</li>
+							<li>
+								<a href="#!/conpag/fornecedor">
+									<fa name="caret-right"></fa> Listagem de Fornecedores
+								</a>
+							</li>
+						</ul>
+						
+					</li>
+					<li>
+						<a>
+							<span> Contas a Pagar </span>
+						</a>
+						
+						<ul>
+							<li>
+								<a href="#!/conpag/contas-pagar/new">
+									<fa name="caret-right"></fa> Lancar Conta a Pagar
+								</a>
+							</li>
+							<li>
+								<a href="#!/conpag/contas-pagar">
+									<fa name="caret-right"></fa> Listagem de Contas a Pagar
+								</a>
+							</li>
+						</ul>
+						
+					</li>
+				</ul>
+			</li>
+			 
+		</ul>
+	</uib-accordion-group> </uib-accordion>
+</div>

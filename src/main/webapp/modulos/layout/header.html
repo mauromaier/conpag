@@ -1,0 +1,76 @@
+<header class="clearfix" ng-controller="HeaderController">
+	
+	<!-- Branding -->
+	<div class="branding scheme-dark">
+		<a class="brand" href="#!/about">
+			<span><strong>Con</strong>Pag</span>
+		</a>
+		<a href="javascript:;" class="offcanvas-toggle visible-xs-inline" offcanvas-sidebar>
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+
+	<!-- side bar -->
+	<ul class="nav-left pull-left list-unstyled list-inline">
+		<li class="sidebar-collapse divided-right">
+			<a href="javascript:;" collapse-sidebar>
+				<fa name="outdent"></fa>
+	    	</a>
+		</li>
+	</ul>
+
+	<!-- Right-side navigation -->
+	<ul class="nav-right pull-right list-inline">
+
+	    <li class="dropdown messages" uib-dropdown>
+			<a href class="dropdown-toggle" uib-dropdown-toggle>
+	        	<fa name="envelope"></fa>
+	        	<span class="badge bg-lightred" ng-if=" totalNaoLidas > 0 ">{{totalNaoLidas}}</span>
+	      	</a>
+	
+			<div class="dropdown-menu pull-right with-arrow panel panel-default animated littleFadeInDown" role="menu">
+	
+				<div class="panel-heading">
+					Você possui <strong> {{totalNaoLidas}} </strong> mensagem(s) não lida(s)
+				</div>
+		
+				<div class="panel-footer">
+					<a href="#!/mensagens/new">Enviar mensagem<fa name="plus" class="pull-right"></fa></a>
+				</div>
+				<div class="panel-footer">
+					<a href="#!/mensagens">Exibir todas as mensagens<fa name="bars" class="pull-right"></fa></a>
+				</div>
+				
+			</div>
+		</li>
+		
+		<li class="dropdown nav-profile" uib-dropdown>
+			<a href class="dropdown-toggle" uib-dropdown-toggle>
+				<img src="assets/imagens/personal-icon.png" alt="" class="img-circle size-30x30">
+	        	<span> {{user.nome}}
+	        		<fa name="angle-down"></fa>
+	        	</span>
+	      	</a>
+	
+			<ul class="dropdown-menu animated littleFadeInRight" role="menu">
+	        	<li ng-hide="true">
+	          		<a href="#">
+	            		<fa name="cog"></fa>Configuração
+	          		</a>
+	        	</li>
+	        	
+<!-- 	        	<li class="divider"></li> -->
+	        	
+	        	<li>
+	          		<a href="./logout.action">
+	            		<fa name="sign-out"></fa>Sair
+	          		</a>
+	        	</li>
+	        	
+			</ul>
+		</li>
+	</ul>
+  	<!-- Right-side navigation end -->
+  	
+
+</header>

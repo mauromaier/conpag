@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+	<li ng-repeat="m in menu" ng-class="{'active':m.active}">
+		<a ng-if="!m.active" href="{{m.link}}">{{m.nome}}</a>
+		<span ng-if="m.active">{{m.nome}}</span>
+	</li>
+</ol>

@@ -1,0 +1,182 @@
+<div class="page">
+
+	<section class="tile">
+		<div class="tile-header dvd dvd-btm">
+			<h1 class="custom-font"><strong>Filtros</strong></h1>
+
+			<ul class="controls">
+				<li class="dropdown" uib-dropdown>
+					<a ng-click="openMenu()" href tile-control-toggle class="dropdown-toggle settings">
+						<span class="expand fa fa-minus"></span>
+						<span class="minimize fa fa-plus"></span>
+					</a>
+				</li>
+			</ul>
+				
+		</div>
+
+		<div class="tile-body" ng-show="isOpen" >
+		
+			<div class="form-group col-sm-6"
+				 ng-class="{'has-error': ( form.dtColetaInicio.$invalid && (form.dtColetaInicio.$touched || form.$submitted) ) || ( form.dtColetaFim.$invalid && (form.dtColetaFim.$touched || form.$submitted) ) }">
+				<label class="control-label">Início: </label>
+
+				<input name="dtColetaInicio"
+		               type="text"
+		               class="form-control" 
+		               ng-model="mensagemFiltro.inicio"
+		               bs-datepicker
+					   autoclose="true"
+					   required>
+			</div>
+
+			<div class="form-group col-sm-6"
+				 ng-class="{'has-error': ( form.dtColetaInicio.$invalid && (form.dtColetaInicio.$touched || form.$submitted) ) || ( form.dtColetaFim.$invalid && (form.dtColetaFim.$touched || form.$submitted) ) }">
+				
+				<label class="control-label">Fim: </label>
+				
+				<input name="dtColetaFim"
+		               type="text"
+		               class="form-control" 
+		               ng-model="mensagemFiltro.fim"
+		               bs-datepicker
+					   autoclose="true" 
+					   required>
+					   
+					   
+				<div class="help-block"
+			 		 ng-show="( form.dtColetaInicio.$invalid && (form.dtColetaInicio.$touched || form.$submitted) ) || ( form.dtColetaFim.$invalid && (form.dtColetaFim.$touched || form.$submitted) )">
+					<span>Selecione o período coleta</span>
+				</div>	   
+			</div>
+		
+			<div class="form-group col-sm-6" ng-show="opcao == 'recebidas'">
+		        <label class="control-label">Regional:</label> 
+		        
+				<select name="regional" 
+						class="form-control"
+						ng-options="r.id as r.nome for r in regionais track by r.id"
+						ng-model="mensagemFiltro.idRegional">
+						
+						<option value="">Todas...</option>
+				</select>
+			</div>
+				
+			<div class="form-group col-sm-12">
+				
+				<label class="checkbox-inline checkbox-custom-alt"> 
+					<input name="customRadioAlt" 
+						   type="radio"
+						   ng-model="opcao"
+						   ng-click="trocaOpcao()"
+						   value="recebidas">
+						<i></i> Recebidas
+				</label>
+			
+				&nbsp;
+				&nbsp;
+				&nbsp;
+
+				<label class="checkbox-inline checkbox-custom-alt"> 
+					<input name="customRadioAlt" 
+						   type="radio"
+						   ng-model="opcao"
+						   ng-click="trocaOpcao()"
+						   value="enviadas">
+						<i></i> Enviadas
+				</label>
+				
+			</div>
+			
+			
+			<div class="row form-group" > 
+			</div>
+			
+		</div>
+		
+		
+	</section>
+	
+	<section class="tile" >
+		<div class="tile-header dvd dvd-btm">
+			<h1 class="custom-font"><strong>Mensagens {{opcao}}</strong></h1>
+				
+			<ul class="controls">
+				<li>
+					<a ng-click="pesquisar()" 
+					   href 
+					   data-toggle="tooltip" 
+		        	   title="Pesquisar">
+						<i class="fa fa-search" ></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div ng-show="opcao == 'recebidas'" class="tile-body p-0">
+			<table class="table table-hover">
+			    <tr>
+			        <th>Remetente</th>
+			        <th>Data</th>
+			        <th>Assunto</th>
+			        <th>Ações</th>
+			    </tr>
+			
+			    <tr ng_repeat="m in recebidas" ng-class="{'tr-grey': !m.lida}">
+			        <td ng_bind="m.usuario"></td>
+			        <td ng-bind="m.data | date:'dd/MM/yyyy - HH:mm'"></td>
+			        <td ng_bind="m.assunto"></td>
+
+			        <td>
+			        	<i class="btn btn-info btn-xs fa fa-eye"  
+		        		   ng-click="visualizarRecebida(m)" 
+		        		   data-toggle="tooltip" 
+		        		   title="Visualizar"></i>
+						
+						<i class="btn btn-success btn-xs fa fa-reply"  
+		        		   ng-click="responder(m.id)"
+		        		   data-toggle="tooltip" 
+		        		   title="Responder"></i>
+
+		        		<i class="btn btn-danger btn-xs fa fa-times" 
+		        		   ng-click="confirmaExclusao(m)" 
+		        		   data-toggle="tooltip" 
+		        		   title="Excluir"></i>
+			        </td>
+			    </tr>
+			
+			</table>
+		</div>
+		
+		<div ng-show="opcao == 'enviadas'" class="tile-body p-0">
+			<table class="table table-hover">
+			    <tr>
+			        <th>Destinatário</th>
+			        <th>Data</th>
+			        <th>Assunto</th>
+			        <th>Ações</th>
+			    </tr>
+			
+			    <tr ng_repeat="m in enviadas" ng-class="{'tr-grey': !m.lida}">
+			        <td ng_bind="m.usuario"></td>
+			        <td ng-bind="m.data | date:'dd/MM/yyyy - HH:mm'"></td>
+			        <td ng_bind="m.assunto"></td>
+
+			        <td>
+			        	<i class="btn btn-info btn-xs fa fa-eye"  
+		        		   ng-click="visualizarEnviadas(m)" 
+		        		   data-toggle="tooltip" 
+		        		   title="Visualizar"></i>
+			        </td>
+			    </tr>
+			
+			</table>
+		</div>
+		
+		<div class="tile-footer dvd dvd-top">
+			<div class="row">
+				<div rodape-paginado></div>
+			</div>
+		</div>
+	</section>
+</div>

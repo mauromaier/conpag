@@ -1,0 +1,142 @@
+<div class="page">
+
+	<form name="form" ng-submit="salvar()" novalidate>
+
+		<section class="tile">
+
+			<div class="tile-header dvd dvd-btm">
+				<h1 class="custom-font">
+					<strong>Cadastro de Contas a Pagar</strong>
+				</h1>
+			</div>
+
+			<div class="tile-body">
+				<div class="form-group col-sm-4"
+					ng-class="{'has-error':form.dtEmissao.$invalid && (form.dtEmissao.$touched || form.$submitted)}">
+
+					<label class="control-label">Data da Emissão:</label> <input
+						name="dtEmissao" type="text" class="form-control"
+						ng-model="contapagar.dtEmissao" bs-datepicker
+						data-date-format="dd/MM/yyyy" autoclose="true" required>
+
+					<div class="help-block"
+						ng-show="form.dtEmissao.$invalid && (form.dtEmissao.$touched || form.$submitted)">
+						<span>Data de Emissão obrigatória</span>
+					</div>
+				</div>
+
+				<div class="form-group col-sm-8">
+					<label class="control-label">Fornecedor:</label>
+					<div class="form-group">
+						<div
+							custom-select="f as f.razaoNome for f in fornecedores | filter: $searchTerm"
+							ng-model="contapagar.fornecedor" class="form-control">
+
+							<div>
+								<strong>Fornecedor: {{f.razaoNome }}</strong><br /> 
+								<span><strong>CNPJ/CPF:</strong> {{ f.cnpjCpf }}</span><br /> 						
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group col-sm-8">
+					<label class="control-label">Empresa/Filial:</label>
+					<div class="form-group">
+						<div
+							custom-select="e as e.descricao for e in empresas | filter: $searchTerm"
+							ng-model="contapagar.empresa" class="form-control">
+
+							<div>
+								<strong>Empresa: {{e.descricao }}</strong><br/> 
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group col-sm-4">
+
+					<label class="control-label">Grupo:</label>
+					<div class="form-group">
+						<select 
+						    name="grupo" 
+						    class="form-control"
+							ng-options="g as g.descricao for g in grupos track by g.id"
+							ng-model="contapagar.grupo" 
+							required>
+							<option value="">Selecione...</option>
+						</select> 
+					</div>
+				</div>
+				<div class="form-group col-sm-6">
+
+					<label class="control-label">Descricao:</label> <input name="descricao"
+						type="text" class="form-control" ng-model="contapagar.descricao">
+				</div>
+				<div class="form-group col-sm-3">
+
+					<label class="control-label">Portador:</label> <input name="portador"
+						type="text" class="form-control" ng-model="contapagar.portador">
+				</div>
+				<div class="form-group col-sm-3">
+
+					<label class="control-label">Documento:</label> <input name="documento"
+						type="text" class="form-control" ng-model="contapagar.documento">
+				</div>
+
+				<section class="form-group col-sm-12">
+					<div class="tile-header dvd dvd-btm">
+						<h2 class="custom-font">
+							<strong>Parcelas</strong>
+						</h2>
+
+						<ul class="controls">
+
+							<li><a ng-click="onClickCadastrarParcela()"
+								data-toggle="tooltip" title="Adicionar Parcela"> <i
+									class="fa fa-plus"></i>
+							</a></li>
+						</ul>
+					</div>
+
+					<div class="tile-body p-0">
+						<table class="table table-hover">
+							<tr>
+								<th>Data de Vencimento</th>
+								<th>Data de Pagamento</th>
+								<th>Valor</th>
+								<th>Ações</th>
+							</tr>
+							<tr ng_repeat="par in contapagar.listaParcelas">
+								<td ng-bind="par.dtVencimento | date:'dd/MM/yyyy'"></td>
+								<td ng-bind="par.dtPagamento | date:'dd/MM/yyyy'"></td>
+								<td ng-bind="par.valor | realbrasileiro"></td>
+
+								<td><i class="btn btn-warning btn-xs fa fa-pencil"
+									ng-click="onClickAlterarParcela(par)"
+									data-toggle="tooltip" title="Alterar"></i> 
+									<i class="btn btn-danger btn-xs fa fa-times"
+									ng-click="confirmarRemoverParcela(par)"
+									data-toggle="tooltip" title="Excluir"></i>
+									<i class="btn btn-success btn-xs fa fa-check"
+									ng-click="confirmarQuitarParcela(par)"
+									data-toggle="tooltip" title="Quitar Parcela"></i>
+									</td>
+							</tr>
+						</table>
+					</div>
+				</section>
+
+			<div class="row"></div>
+			</div>
+
+			<div class="tile-footer text-right bg-tr-black lter dvd dvd-top">
+				<button type="submit" class="btn btn-success">Salvar</button>
+			</div>
+
+		</section>
+
+	</form>
+
+</div>

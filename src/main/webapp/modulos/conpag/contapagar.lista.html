@@ -1,0 +1,151 @@
+<div class="page">
+
+<form name="form" novalidate >
+
+	<section class="tile">
+		<div class="tile-header dvd dvd-btm">
+			<h1 class="custom-font"><strong>Filtros</strong></h1>
+
+			<ul class="controls">
+				<li class="dropdown" uib-dropdown>
+					<a ng-click="openMenu()" href tile-control-toggle class="dropdown-toggle settings">
+						<span class="expand fa fa-minus"></span>
+						<span class="minimize fa fa-plus"></span>
+					</a>
+				</li>
+			</ul>
+				
+		</div>
+
+		<div class="tile-body" ng-show="isOpen" >
+		
+			<div class="col-sm-12">
+ 				
+ 				<div class="form-group col-sm-6">
+			        <label class="control-label">Empresas/Filiais:</label>
+		            <div custom-select="e.id as e.descricao for e in empresas | filter: $searchTerm" 
+		            	 ng-model="idEmpresa"
+		            	 class="form-control">
+		            	 
+		                <div ng-show="e.id > 0">
+		                    <strong>{{e.descricao }}</strong><br/>
+		                    <hr>
+		                </div>
+						<div ng-show="e.id == -1">
+						    <strong>{{e.descricao }}</strong><br/>
+						</div>
+
+		            </div>
+				</div>
+				
+				<div class="form-group col-sm-3" ng-class="{'has-error':form.dtInicial.$invalid && (form.dtInicial.$touched || form.$submitted)}">
+			        <label class="control-label">Data Inicial:</label> 
+					<input name="dtInicial"
+			               type="text"
+			               class="form-control" 
+			               ng-model="dtInicial"
+			               bs-datepicker
+			               data-date-format="dd/MM/yyyy"
+			               data-max-date="{{hoje}}"
+						   autoclose="true">   
+				</div>
+					
+				<div class="form-group col-sm-3" ng-class="{'has-error':form.dtFinal.$invalid && (form.dtFinal.$touched || form.$submitted)}">
+			        <label class="control-label">Data Final:</label> 
+					<input name="dtFinal"
+			               type="text"
+			               class="form-control" 
+			               ng-model="dtFinal"
+			               bs-datepicker
+			               data-date-format="dd/MM/yyyy"
+			               data-max-date="{{hoje}}"
+						   autoclose="true">	   
+				</div>
+				
+			<div class="form-group col-sm-6" >
+				<label class="control-label">Contas a Pagar/Pagas:</label> 
+				     
+				<select name="idPagamento" 
+					    class="form-control"
+						ng-model="filtro.idPagamento"
+				        required >
+						<option value="">Selecione...</option>
+						<option value="1">Pagas</option>
+						<option value="2">A Pagar</option>
+				</select>
+			</div>
+			
+			</div>
+		
+			<div class="row form-group" > 
+			</div>
+			
+		</div>
+		
+	</section>
+	
+	<section class="tile" >
+		<div class="tile-header dvd dvd-btm">
+			<h1 class="custom-font"><strong>Listagem de Contas a Pagar</strong></h1>
+				
+			<ul class="controls">
+				
+				<li>
+					<a ng-click="pesquisar()" 
+					   href 
+					   data-toggle="tooltip" 
+		        	   title="Pesquisar">
+						<i class="fa fa-search" ></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	
+		<div class="tile-body p-0">
+			<table class="table table-hover">
+			    <tr>
+					<th>Data de Emissão</th>
+			        <th>Fornecedor</th>
+			        <th>Empresa/Filial</th>
+			        <th>Descrição</th>
+			        <th>Saldo Inicial</th>
+					<th>Em Caixa</th>
+			        <th>Valor a Pagar</th>
+			        <th>Valor Pago</th>
+			        <th>Ações</th>
+			    </tr>
+			
+			    <tr ng_repeat="c in lista">
+			        <td ng_bind="c.dtEmissao | date:'dd/MM/yyyy'"></td>
+			        <td ng_bind="c.fornecedor"></td>
+			        <td ng-bind="c.empresa"></td>
+			        <td ng-bind="c.descricao"></td>
+			        <td ng-bind="c.saldoAnterior | realbrasileiro"></td>
+			        <td ng-bind="c.emCaixa | realbrasileiro"></td>
+			        <td ng-bind="c.paraPagar | realbrasileiro"></td>
+			        <td ng_bind="c.valorPago | realbrasileiro"></td>
+			       
+			        <td>
+		        		<a class="btn btn-warning btn-xs fa fa-pencil" 
+		        		   href="#!/conpag/contas-pagar/{{c.id}}" 
+		        		   data-toggle="tooltip"
+		        		   title="Alterar Conta a Pagar"></a>
+		        		   
+		        		<i class="btn btn-danger btn-xs fa fa-times" 
+		        		   ng-click="confirmarRemover(c)" 
+		        		   data-toggle="tooltip"
+		        		   title="Excluir Conta a Pagar"></i>
+			        </td>
+			    </tr>
+			
+			</table>
+		</div>
+		<div class="tile-footer dvd dvd-top">
+			<div class="row">
+				<div rodape-paginado></div>
+			</div>
+		</div>
+	</section>
+	
+</form>
+</div>

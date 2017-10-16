@@ -1,0 +1,52 @@
+<div class="modal-content">
+	<div class="modal-header">
+    	<button type="button" class="close" aria-label="Close" ng-click="fechar()" ><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Visualiza Mensagem</h4>
+	</div>
+
+	<div class="modal-body">
+		<div class="form-group col-sm-12">
+	        <label class="control-label">Usuário:</label> 
+	        
+			<p name="assunto"
+               type="text"
+               class="form-control" 
+               ng-bind="mensagem.usuario" >
+		</div>
+		
+		<div class="form-group col-sm-12">
+	        <label class="control-label">Data:</label> 
+	        
+			<p name="data"
+               type="text"
+               class="form-control" 
+               ng-bind="mensagem.data | date:'dd/MM/yyyy - HH:mm'" >
+		</div>
+		
+		<div class="form-group col-sm-12">
+	        <label class="control-label">Assunto:</label> 
+	        
+			<p name="assunto"
+               type="text"
+               class="form-control" 
+               ng-bind="mensagem.assunto" >
+		</div>
+		
+		<div class="form-group" >
+            <div>
+    			<text-angular ta-disabled="true"
+    						  ng-model="mensagem.texto" 
+    						  ta-toolbar="[ ['h1','h2','h3'],
+	    						  			['bold','italics','underline','ul', 'ol'],
+	    						  			['justifyLeft', 'justifyCenter', 'justifyRight', 'indent', 'outdent'] ]" />
+            </div>
+		</div>
+		
+    </div>
+    
+    <div class="modal-footer">
+		<button type="button" class="btn btn-primary" ng-click="fechar()">Voltar</button>
+		<button type="button" class="btn btn-success" ng-show="false">Responder</button>
+	</div>
+
+</div>

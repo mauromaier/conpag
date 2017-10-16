@@ -1,0 +1,17 @@
+<div>
+    <div class="col-sm-4">
+		<small class="text-muted">Mostrando {{(paginaAtual-1) * limite + 1}} - {{total <= limite ? total : ((paginaAtual * limite) > total ? total : (paginaAtual * limite))}} de {{total}} itens</small>
+	</div>
+            
+   	<div class="col-sm-8 text-right" >
+   		<uib-pagination class="pagination-sm m-0"
+	    				direction-links="true" 
+						boundary-links="true" 
+						total-items="total"
+						items-per-page="limite" 
+						ng-model="paginaAtual"
+						ng-change="pesquisar()"
+						max-size="5">
+		</uib-pagination>
+	</div>
+</div>

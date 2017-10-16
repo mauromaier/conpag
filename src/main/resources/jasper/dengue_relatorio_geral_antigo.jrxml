@@ -1,0 +1,2011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 3.7.2  -->
+<!-- 2017-03-07T19:18:19 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dengue" pageWidth="595" pageHeight="1200" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isTitleNewPage="true">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.02452018304761"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="table_line" hAlign="Center" vAlign="Middle" lineSpacing="Single">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style backcolor="#CCCCCC" lineSpacing="Single"/>
+		</conditionalStyle>
+	</style>
+	<style name="table_header" forecolor="#FFFFFF" backcolor="#003333" hAlign="Center" vAlign="Middle" lineSpacing="Single"/>
+	<style name="table_header_red" forecolor="#FF9999" backcolor="#003333" hAlign="Center" vAlign="Middle" lineSpacing="Single"/>
+	<style name="Crosstab Data Text" hAlign="Center" lineSpacing="Single"/>
+	<style name="table" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#2C3F3F" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFE6E6" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 1" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#2C3F3F" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#CFE6E6" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 2" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#ACE673" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#DAE6CF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#488E90" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#CFE5E6" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#488E90" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#CFE5E6" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataset_casos">
+		<field name="nome" class="java.lang.String"/>
+		<field name="total" class="java.lang.Integer"/>
+		<field name="totalConfirmado" class="java.lang.Integer"/>
+		<field name="totalDescartado" class="java.lang.Integer"/>
+		<field name="totalAguardando" class="java.lang.Integer"/>
+		<variable name="numero" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[new java.lang.Integer(1)]]></variableExpression>
+		</variable>
+		<variable name="somaSuspeitos" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+		<variable name="somaConfirmados" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{totalConfirmado}]]></variableExpression>
+		</variable>
+		<variable name="somaDescartados" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{totalDescartado}]]></variableExpression>
+		</variable>
+		<variable name="somaAndamento" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{totalAguardando}]]></variableExpression>
+		</variable>
+		<variable name="somaInvestigacao" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_focos">
+		<field name="nome" class="java.lang.String"/>
+		<field name="total" class="java.lang.Long"/>
+		<field name="totalImovel" class="java.lang.Long"/>
+		<variable name="numFocos" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[new java.lang.Integer(1)]]></variableExpression>
+		</variable>
+		<variable name="somaFocos" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+		<variable name="somaImoveis" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{totalImovel}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_deposito">
+		<field name="nome" class="java.lang.String"/>
+		<field name="total" class="java.lang.Long"/>
+		<field name="percentual" class="java.lang.Double"/>
+		<variable name="somaDeposito" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_imoveis">
+		<field name="nome" class="java.lang.String"/>
+		<field name="total" class="java.lang.Long"/>
+		<field name="percentual" class="java.lang.Double"/>
+		<variable name="somaImoveis" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_casos_sexo">
+		<field name="sexo" class="java.lang.String"/>
+		<field name="confirmados" class="java.lang.Integer"/>
+		<field name="suspeitos" class="java.lang.Integer"/>
+		<variable name="somaSuspeitos" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{suspeitos}]]></variableExpression>
+		</variable>
+		<variable name="somaConfirmados" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{confirmados}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_mes_focos">
+		<field name="mesExtenso" class="java.lang.String"/>
+		<field name="municipio" class="java.lang.String"/>
+		<field name="total" class="java.lang.Integer"/>
+		<field name="mes" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="dataset_casos_autoctones">
+		<field name="nomeFaixa" class="java.lang.String"/>
+		<field name="masculinoLabel" class="java.lang.String"/>
+		<field name="valor" class="java.lang.Integer"/>
+		<field name="femininoLabel" class="java.lang.String"/>
+		<variable name="numero" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[new java.lang.Integer(1)]]></variableExpression>
+		</variable>
+		<variable name="total" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{valor}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_casos_importados">
+		<field name="nomeFaixa" class="java.lang.String"/>
+		<field name="masculinoLabel" class="java.lang.String"/>
+		<field name="valor" class="java.lang.Integer"/>
+		<field name="femininoLabel" class="java.lang.String"/>
+		<variable name="numero" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[new java.lang.Integer(1)]]></variableExpression>
+		</variable>
+		<variable name="total" class="java.lang.Integer" calculation="Sum">
+			<variableExpression><![CDATA[$F{valor}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_casos_importados_destino">
+		<field name="nome" class="java.lang.String"/>
+		<field name="total" class="java.lang.Long"/>
+		<variable name="total" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_casos_autoctones_lpi">
+		<field name="munResidencia" class="java.lang.String"/>
+		<field name="lpi" class="java.lang.String"/>
+		<field name="total" class="java.lang.Long"/>
+		<variable name="total" class="java.lang.Long" calculation="Sum">
+			<variableExpression><![CDATA[$F{total}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset_total_municipio_mes">
+		<field name="qtdeMunicipioJan" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioFev" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioMar" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioAbr" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioMai" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioJun" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioJul" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioAgo" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioSet" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioOut" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioNov" class="java.lang.Integer"/>
+		<field name="qtdeMunicipioDez" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="dataset_casos_confirmados">
+		<field name="totalImportados" class="java.lang.Integer"/>
+		<field name="totalAutoctones" class="java.lang.Integer"/>
+		<field name="totalInvestigacao" class="java.lang.Integer"/>
+		<field name="totalIndeterminado" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="pWhere" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[".\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="file_separator" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="caminho_sistema" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Performer\\FWWeb\\Tomcat 5.0\\webapps\\vigilantos"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ano" class="java.lang.Integer"/>
+	<parameter name="casos" class="java.util.List"/>
+	<parameter name="focos" class="java.util.List"/>
+	<parameter name="casos_sexo" class="java.util.List"/>
+	<parameter name="imoveis" class="java.util.List"/>
+	<parameter name="depositos" class="java.util.List"/>
+	<parameter name="focos_mes" class="java.util.List"/>
+	<parameter name="casos_autoctones" class="java.util.List"/>
+	<parameter name="casos_importados" class="java.util.List"/>
+	<parameter name="casos_importados_destino" class="java.util.List"/>
+	<parameter name="casos_autoctones_lpi" class="java.util.List"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<parameter name="dtAtualizacao" class="java.lang.String"/>
+	<parameter name="sc_ano" class="java.lang.String"/>
+	<parameter name="meses" class="java.util.List"/>
+	<parameter name="casosConfirmados" class="java.util.List"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="periodo" class="java.lang.String"/>
+	<field name="procedenciaConfirmados" class="java.lang.String"/>
+	<field name="textAutoctones" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="239">
+			<line>
+				<reportElement key="line-1" x="-1" y="2" width="535" height="1"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="2" width="233" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Estado de Santa Catarina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="47" width="325" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Superintendência de Vigilância em Saúde]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="32" width="325" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Sistema Único de Saúde]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="77" width="325" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Gerência de Vigilância de Zoonoses e Entomologia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="62" width="233" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Diretoria de Vigilância Epidemiológica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" x="54" y="17" width="233" height="15"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Secretaria de Estado da Saúde]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-2" x="-1" y="94" width="535" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="95" width="536" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font fontName="SansSerif" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Programa de Controle de Dengue]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="129" width="536" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="30" y="224" width="297" height="13"/>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fonte: LACEN – SES – SC]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table" positionType="Float" x="23" y="185" width="484" height="39"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casos})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="29">
+						<jr:tableHeader style="table_header" height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="29" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nº]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="29" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="29" height="14"/>
+								<textElement lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{numero}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="178">
+						<jr:tableHeader height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="178" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Município]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="178" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="178" height="14" isPrintWhenDetailOverflows="true"/>
+								<textElement textAlignment="Left" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70">
+						<jr:tableHeader height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Suspeitos]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<textField>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{somaSuspeitos}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="70" height="14"/>
+								<textElement lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70">
+						<jr:tableHeader height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header_red" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Confirmados]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<textField>
+								<reportElement style="table_header_red" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{somaConfirmados}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="70" height="14"/>
+								<textElement lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalConfirmado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70">
+						<jr:tableHeader height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Descartados]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<textField>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{somaDescartados}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="70" height="14"/>
+								<textElement lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalDescartado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70">
+						<jr:tableHeader height="22" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Aguardando Resultado]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="22" rowSpan="1">
+							<textField>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="70" height="22"/>
+								<textElement lineSpacing="Single">
+									<font size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{somaAndamento}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="14" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="70" height="14"/>
+								<textElement lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalAguardando}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement positionType="Float" x="23" y="149" width="484" height="36"/>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["1. Casos de dengue segundo classificação e município de residência, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="921" splitType="Stretch">
+			<break>
+				<reportElement positionType="Float" x="0" y="508" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<break>
+				<reportElement positionType="Float" x="0" y="838" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{imoveis}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<componentElement>
+				<reportElement key="table" positionType="Float" x="75" y="779" width="360" height="54" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{depositos}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_deposito">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{depositos})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="213">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="213" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[Tipo de Depósito]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="213" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="213" height="20"/>
+								<textElement textAlignment="Left" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<textField>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$V{somaDeposito}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="90" height="20"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[%]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField pattern="###0.00">
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="90" height="20"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Double"><![CDATA[$F{percentual}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table" positionType="Float" x="75" y="866" width="360" height="53" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{imoveis}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_imoveis">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{imoveis})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="213">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="213" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[Tipo de Imóvel]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="213" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="213" height="20"/>
+								<textElement textAlignment="Left" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<textField>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$V{somaImoveis}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="90" height="20"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[%]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="90" height="30"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField pattern="###0.00">
+								<reportElement style="table_line" mode="Opaque" x="0" y="0" width="90" height="20"/>
+								<textElement lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Double"><![CDATA[$F{percentual}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<crosstab>
+				<reportElement positionType="Float" x="26" y="534" width="505" height="68" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<crosstabDataset>
+					<dataset>
+						<datasetRun subDataset="dataset_mes_focos">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{focos_mes})]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+				</crosstabDataset>
+				<crosstabHeaderCell>
+					<cellContents>
+						<staticText>
+							<reportElement style="table_header" mode="Opaque" x="0" y="0" width="116" height="30"/>
+							<textElement lineSpacing="Single"/>
+							<text><![CDATA[Município]]></text>
+						</staticText>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="municipio" width="116" totalPosition="End">
+					<bucket>
+						<bucketExpression><![CDATA[$F{municipio}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#2E8B57" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" mode="Opaque" x="0" y="0" width="116" height="18" forecolor="#000000" backcolor="#CCCCCC"/>
+								<textElement verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{municipio}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#BFFFDB" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="116" height="25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Total por mês]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="mesExtenso" height="30" totalPosition="End">
+					<bucket>
+						<bucketExpression><![CDATA[$F{mesExtenso}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#2E8B57" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" mode="Opaque" x="0" y="0" width="50" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{mesExtenso}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#BFFFDB" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="50" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Total por município]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="totalMeasure" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{total}]]></measureExpression>
+				</measure>
+				<measure name="qtdeMunicipioMes" class="java.lang.Integer" calculation="Count">
+					<measureExpression><![CDATA[$F{mes}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="18">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" mode="Transparent" x="0" y="0" width="50" height="18"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="25" rowTotalGroup="municipio">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="18" columnTotalGroup="mesExtenso">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="18"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="25" rowTotalGroup="municipio" columnTotalGroup="mesExtenso">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+			<break>
+				<reportElement positionType="Float" x="0" y="752" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{depositos}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<crosstab>
+				<reportElement positionType="Float" x="26" y="671" width="505" height="74" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<crosstabDataset>
+					<dataset>
+						<datasetRun subDataset="dataset_mes_focos">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{focos_mes})]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+				</crosstabDataset>
+				<crosstabHeaderCell>
+					<cellContents>
+						<staticText>
+							<reportElement style="table_header" mode="Opaque" x="0" y="0" width="116" height="30"/>
+							<textElement lineSpacing="Single"/>
+							<text><![CDATA[Município]]></text>
+						</staticText>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="municipio" width="116" totalPosition="End">
+					<bucket>
+						<bucketExpression><![CDATA[$F{municipio}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents backcolor="#2E8B57" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" mode="Opaque" x="0" y="0" width="116" height="18" forecolor="#000000" backcolor="#CCCCCC"/>
+								<textElement verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{municipio}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents backcolor="#BFFFDB" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement x="0" y="0" width="116" height="25"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Total por mês]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="mesExtenso" height="30" totalPosition="End">
+					<bucket>
+						<bucketExpression><![CDATA[$F{mesExtenso}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents backcolor="#2E8B57" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" mode="Opaque" x="0" y="0" width="50" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{mesExtenso}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents backcolor="#BFFFDB" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="49" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="8"/>
+								</textElement>
+								<text><![CDATA[Total por município]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="totalMeasure" class="java.lang.Integer" calculation="Count">
+					<measureExpression><![CDATA[$F{total}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="18">
+					<cellContents>
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="18"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell height="25" rowTotalGroup="municipio">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="49" height="18" columnTotalGroup="mesExtenso">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="49" height="18"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="49" rowTotalGroup="municipio" columnTotalGroup="mesExtenso">
+					<cellContents backcolor="#BFFFDB" mode="Opaque">
+						<box>
+							<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+						</box>
+						<textField>
+							<reportElement style="Crosstab Data Text" x="0" y="0" width="49" height="25"/>
+							<textElement verticalAlignment="Middle" lineSpacing="Single">
+								<font size="8"/>
+							</textElement>
+							<textFieldExpression class="java.lang.Integer"><![CDATA[$V{totalMeasure}]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+			<componentElement>
+				<reportElement key="table" positionType="Float" mode="Opaque" x="25" y="320" width="357" height="60" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos_importados">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casos_importados})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="120">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="120" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Faixa Etária]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="120" height="21"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="120" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nomeFaixa}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Masculino]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="21"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{masculinoLabel}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Feminino]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="21"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{femininoLabel}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="65">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="65" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="65" height="21"/>
+								<textElement lineSpacing="Single">
+									<font size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[]]></text>
+							</staticText>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="65" height="21" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{total}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="65" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{valor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement key="table" positionType="Float" mode="Opaque" x="26" y="428" width="357" height="60" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos_autoctones">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casos_autoctones})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="120">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="120" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Faixa Etária]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="120" height="21"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="120" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nomeFaixa}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Masculino]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="100" height="21" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{masculinoLabel}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Feminino]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="100" height="21" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<text><![CDATA[100]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{femininoLabel}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="65">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="65" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="65" height="21"/>
+								<textElement lineSpacing="Single">
+									<font size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="0" width="65" height="21" forecolor="#FFFFFF"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="10"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{total}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="65" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{valor}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="30" y="488" width="297" height="15" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fonte: LACEN – SES – SC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="29" y="380" width="297" height="14" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fonte: LACEN – SES – SC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="31" y="174" width="297" height="14" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados_destino}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fonte: LACEN – SES – SC]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table" positionType="Float" mode="Opaque" x="26" y="134" width="357" height="39" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados_destino}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos_importados_destino">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casos_importados_destino})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="257">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="257" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Estado/País de Procedência]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="257" height="21"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="257" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{nome}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nº de casos]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="100" height="21" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$V{total}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="31" y="276" width="297" height="14" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones_lpi}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement lineSpacing="Single">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fonte: LACEN – SES – SC]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table" positionType="Float" mode="Opaque" x="26" y="235" width="357" height="39" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones_lpi}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos_autoctones_lpi">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casos_autoctones_lpi})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="180">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="180" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Município de Residência]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="180" height="21"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="180" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{munResidencia}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="180" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Local Provável de Infecção]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="180" height="21"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:detailCell height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="180" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{lpi}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100">
+						<jr:tableHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement style="table_header" mode="Opaque" x="0" y="0" width="100" height="30"/>
+								<textElement lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nº de casos]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="21" rowSpan="1">
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="100" height="21" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$V{total}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:detailCell style="table_line" height="20" rowSpan="1">
+							<textField>
+								<reportElement style="table_line" positionType="Float" mode="Opaque" x="0" y="0" width="100" height="20"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Long"><![CDATA[$F{total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement positionType="Float" x="0" y="294" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<break>
+				<reportElement positionType="Float" x="0" y="400" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<break>
+				<reportElement positionType="Float" x="0" y="193" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones_lpi}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<textField>
+				<reportElement positionType="Float" x="25" y="197" width="501" height="37" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones_lpi}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["3. Casos autóctones de dengue segundo município de residência e local provável de infecção, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="25" y="113" width="501" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados_destino}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["2. Casos importados de dengue segundo local provável de infecção, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="25" y="298" width="501" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["4. Casos importados de dengue segundo faixa etária e sexo, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="26" y="405" width="500" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_autoctones}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["5. Casos autóctones de dengue segundo faixa etária e sexo, SC, "+ $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="26" y="513" width="501" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["6. Focos de Aedes aegypti, segundo município e mês, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="25" y="649" width="505" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["7. Imóveis com focos de Aedes aegypti, segundo município e mês, SC, "+ $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="26" y="755" width="500" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{depositos}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["8. Depósitos com foco de Aedes aegypti, segundo tipo, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="29" y="843" width="497" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{imoveis}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["9. Imóveis com foco de Aedes aegypti, segundo tipo, SC, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement key="table 2" style="table 2" positionType="Float" x="26" y="622" width="409" height="17">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_total_municipio_mes">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{meses})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[JAN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioJan}  != null ? $F{qtdeMunicipioJan} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[FEV]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioFev}  != null ? $F{qtdeMunicipioFev} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[MAR]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioMar}  != null ? $F{qtdeMunicipioMar} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[ABR]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioAbr}  != null ? $F{qtdeMunicipioAbr} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[MAI]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioMai}  != null ? $F{qtdeMunicipioMai} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[JUN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioJun}  != null ? $F{qtdeMunicipioJun} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[JUL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioJul}  != null ? $F{qtdeMunicipioJul} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[AGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioAgo}  != null ? $F{qtdeMunicipioAgo} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[SET]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioSet} != null ? $F{qtdeMunicipioSet} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[OUT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioOut} != null ? $F{qtdeMunicipioOut} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[NOV]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioNov}  != null ? $F{qtdeMunicipioNov} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="26">
+						<jr:columnHeader style="table 2_CH" height="15" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="26" height="15" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[DEZ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 2_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="26" height="14"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{qtdeMunicipioDez} != null ? $F{qtdeMunicipioDez} : 0]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="26" y="607" width="409" height="15">
+					<printWhenExpression><![CDATA[$P{focos_mes}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[6.1. Total de Município com focos por mês]]></text>
+			</staticText>
+			<break>
+				<reportElement positionType="Float" x="0" y="110" width="100" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casos_importados_destino}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<componentElement>
+				<reportElement key="table 5" style="table 5" x="24" y="26" width="498" height="76">
+					<printWhenExpression><![CDATA[$P{casosConfirmados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset_casos_confirmados">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{casosConfirmados})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78">
+						<jr:tableHeader height="31" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="78" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement lineSpacing="Single"/>
+								<text><![CDATA[]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="30" width="78" height="1"/>
+							</line>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="78" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Indeterminado]]></text>
+							</staticText>
+						</jr:tableFooter>
+						<jr:columnHeader height="31" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="78" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Autóctones]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="30" width="76" height="1"/>
+							</line>
+						</jr:columnHeader>
+						<jr:columnFooter height="31" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="78" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Em Investigação]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="30" width="76" height="1"/>
+							</line>
+						</jr:columnFooter>
+						<jr:detailCell height="31" rowSpan="1">
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="78" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Importados]]></text>
+							</staticText>
+							<line>
+								<reportElement x="0" y="30" width="76" height="1"/>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="75">
+						<jr:tableHeader style="table 5_TH" height="31" rowSpan="1">
+							<line>
+								<reportElement x="0" y="30" width="75" height="1"/>
+							</line>
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="75" height="30" forecolor="#FFFFFF" backcolor="#003333"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:tableFooter height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalIndeterminado}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader height="31" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalAutoctones}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement x="0" y="30" width="75" height="1"/>
+							</line>
+						</jr:columnHeader>
+						<jr:columnFooter height="31" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalInvestigacao}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement x="0" y="30" width="75" height="1"/>
+							</line>
+						</jr:columnFooter>
+						<jr:detailCell style="table 5_TD" height="31" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="75" height="30"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{totalImportados}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement x="0" y="30" width="75" height="1"/>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<textField>
+				<reportElement positionType="Float" x="23" y="6" width="501" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casosConfirmados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["1.1. Casos Confirmados de dengue segundo Local Provavel de Infecção, " + $P{sc_ano}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement positionType="Float" x="0" y="2" width="185" height="1" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$P{casosConfirmados}.size() > 0]]></printWhenExpression>
+				</reportElement>
+			</break>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-10" x="0" y="2" width="225" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement lineSpacing="Single">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Atualizado em: " + $P{dtAtualizacao}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="378" y="2" width="154" height="18"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" lineSpacing="Single">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

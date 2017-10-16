@@ -1,0 +1,6 @@
+<select name="municipio" 
+		class="form-control"
+		ng-options="m as m.nome for m in municipios track by m.id"
+		ng-controller="MunicipioListaController">
+		<option value="">Selecione...</option>
+</select>
