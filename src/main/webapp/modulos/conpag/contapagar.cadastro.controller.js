@@ -139,7 +139,7 @@ angular.module("conpag").controller("ContaPagarCadastroController", function($sc
 			if($scope.contapagar.id > 0){
 				api.contapagar.update($scope.contapagar).then(function(response){
 					$location.path("/conpag/contas-pagar");
-					toastr.success("Conta a Pagar alterado com sucesso");
+					toastr.success("Conta a Pagar alterada com sucesso");
 				});
 			}else{
 				
